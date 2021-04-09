@@ -1,0 +1,23 @@
+A novel idea for NN would be the following:
+
+Lets say we have 10,000 datapoints.
+
+Lets generate a NN and train it on the data once. Lets say it gets 80%.
+We create a dataSet composed of all the data that it got wrong.
+
+call it refinedDataSet1 and train another dataSet on that data. Lets say it gets 50%
+
+We keep doing this until for ~99% of the data can be correctly predicted by one of the networks
+When then create a classifier network that takes the original input and the outputs of each of the networks
+and tries to pick one that works. Again we train this until it reaches say 80% accuracy
+and continue the process.
+
+Now we have some initial networks that predict the output. and a set of networks that
+determine which input network to trust. We can repeat this as long as we want until we arrive
+at the final network that simply takes the output of the final pickers
+and returns the best choice. This is trained on the whole dataSet.
+
+For this approach to work we are assuming that what is limiting current
+Networks is their ability to fit to the outer reachers of the data. That is,
+that they are too incentivies on what the average will be and lack the neural
+dexterity to classify weird examples. 
